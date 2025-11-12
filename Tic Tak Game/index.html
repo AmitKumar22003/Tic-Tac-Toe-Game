@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O and X Game</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>O and X Game</h1>
+  <div class="board" id="board"></div>
+  <div class="winner" id="winner"></div>
+  <button onclick="resetGame()">Restart Game</button>
+
+<script>
+  const board = document.getElementById("board");
+  const winnerText = document.getElementById("winner");
+  let currentPlayer = "O";
+  let gameActive = true;
+  let cells = Array(9).fill("");
+
+  // Create cells
+  for (let i = 0; i < 9; i++) {
+    const cell = document.createElement("div");
+    cell.classList.add("cell");
+    cell.addEventListener("click", () => handleClick(i, cell));
+    board.appendChild(cell);
+  }
+
+  function handleClick(index, cell) {
+    if (!gameActive || cells[index] !== "") return;
+    cells[index] = currentPlayer;
+    cell.textContent = currentPlayer;
+
+    if (checkWinner()) {
+      winnerText.textContent = `${currentPlayer} Wins! 🎉`;
+      gameActive = false;
+      return;
+    }
+
+    if (!cells.includes("")) {
+      winnerText.textContent = "It's a Draw!";
+      gameActive = false;
+      return;
+    }
+
+    currentPlayer = currentPlayer === "O" ? "X" : "O";
+  }
+
+  function checkWinner() {
+    const winPatterns = [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [0, 4, 8],
+      [2, 4, 6],
+    ];
+
+    return winPatterns.some(pattern => {
+      const [a, b, c] = pattern;
+      return cells[a] && cells[a] === cells[b] && cells[a] === cells[c];
+    });
+  }
+
+  function resetGame() {
+    cells.fill("");
+    gameActive = true;
+    currentPlayer = "O";
+    winnerText.textContent = "";
+    document.querySelectorAll(".cell").forEach(cell => cell.textContent = "");
+  }
+</script>
+</body>
+</html>
