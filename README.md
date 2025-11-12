@@ -16,4 +16,5 @@ A simple Tic Tac Toe game made with **HTML + CSS + js**.
 ## 📁 Tech Used
 - HTML5  
 - CSS3
-- js
+- JS
+  
