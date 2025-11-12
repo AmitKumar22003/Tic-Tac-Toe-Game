@@ -1,5 +1,5 @@
 # Tic-Tac-Toe-Game
-Simple Tic Tac Toe game using HTML ,CSS and js
+Simple Tic Tac Toe game using HTML ,CSS and JS
 https://amitkumar22003.github.io/Tic-Tac-Toe-Game/
 
 # Tic-Tac-Toe 🎮
