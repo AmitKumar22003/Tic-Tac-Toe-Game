@@ -1,9 +1,9 @@
 # Tic-Tac-Toe-Game
-Simple Tic Tac Toe game using HTML and CSS
+Simple Tic Tac Toe game using HTML ,CSS and js
 https://amitkumar22003.github.io/Tic-Tac-Toe-Game/
 
 # Tic-Tac-Toe 🎮
-A simple Tic Tac Toe game made with **HTML + CSS**.
+A simple Tic Tac Toe game made with **HTML + CSS + js**.
 
 ## 🔗 Live Demo
 [Play Now](https://amitkumar22003.github.io/Tic-Tac-Toe-Game/)
@@ -16,3 +16,4 @@ A simple Tic Tac Toe game made with **HTML + CSS**.
 ## 📁 Tech Used
 - HTML5  
 - CSS3
+- js
